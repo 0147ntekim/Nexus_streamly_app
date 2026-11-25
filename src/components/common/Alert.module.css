@@ -1,0 +1,16 @@
+.alert {
+  padding: var(--space-3);
+  margin-bottom: var(--space-3);
+  background: var(--color-surface-hover);
+  border-left: 4px solid;
+  border-radius: var(--radius);
+  font-size: 0.95rem;
+}
+
+.error {
+  border-color: var(--color-error);
+}
+
+.success {
+  border-color: var(--color-success);
+}

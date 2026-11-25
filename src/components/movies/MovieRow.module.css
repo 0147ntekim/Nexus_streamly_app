@@ -1,0 +1,17 @@
+.track {
+  display: flex;
+  gap: var(--space-3);
+  overflow-x: auto;
+  padding: var(--space-2) var(--space-1) var(--space-3);
+  scroll-snap-type: x proximity;
+}
+
+.item {
+  flex: 0 0 clamp(130px, 18vw, 180px);
+  scroll-snap-align: start;
+}
+
+.empty {
+  color: var(--color-text-muted);
+  padding: var(--space-4) 0;
+}

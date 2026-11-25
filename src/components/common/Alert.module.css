@@ -14,3 +14,7 @@
 .success {
   border-color: var(--color-success);
 }
+
+.info {
+  border-color: var(--color-text-muted);
+}

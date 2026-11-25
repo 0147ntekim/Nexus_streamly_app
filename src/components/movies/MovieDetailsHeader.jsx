@@ -1,6 +1,6 @@
 import Container from "../layout/Container.jsx";
-import Button from "../common/Button.jsx";
 import WatchlistButton from "./WatchlistButton.jsx";
+import PlayAction from "./PlayAction.jsx";
 import { getImageUrl } from "../../utils/images.js";
 import {
   formatYear,
@@ -76,9 +76,7 @@ function MovieDetailsHeader({ movie }) {
             </p>
 
             <div className={styles.actions}>
-              <Button to={`/watch/${movie.id}`} size="lg">
-                ▶ Play
-              </Button>
+              <PlayAction movieId={movie.id} />
               <WatchlistButton movie={movie} />
             </div>
           </div>

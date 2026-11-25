@@ -1,0 +1,146 @@
+.controls {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: var(--space-5) var(--space-3) var(--space-2);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.85), transparent);
+  transition: opacity var(--transition);
+}
+
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.controls:has(:focus-visible) {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.seek {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 16px;
+  margin-bottom: var(--space-2);
+}
+
+.track {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 4px;
+  overflow: hidden;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.buffered,
+.played {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.buffered {
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.played {
+  background: var(--color-accent);
+}
+
+.seekInput {
+  position: relative;
+  width: 100%;
+  height: 16px;
+  margin: 0;
+  background: transparent;
+  -webkit-appearance: none;
+  appearance: none;
+  cursor: pointer;
+}
+
+.seekInput:disabled {
+  cursor: default;
+  opacity: 0.6;
+}
+
+.seekInput::-webkit-slider-runnable-track {
+  height: 16px;
+  background: transparent;
+}
+
+.seekInput::-moz-range-track {
+  background: transparent;
+}
+
+.seekInput::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  margin-top: 1px;
+  border-radius: 50%;
+  background: #fff;
+}
+
+.seekInput::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border: 0;
+  border-radius: 50%;
+  background: #fff;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.iconButton {
+  min-width: 36px;
+  height: 36px;
+  padding: 0 var(--space-2);
+  background: transparent;
+  border: 0;
+  border-radius: var(--radius);
+  color: #fff;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background var(--transition);
+}
+
+.iconButton:hover {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.time {
+  color: #fff;
+  font-size: 0.85rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.spacer {
+  flex: 1;
+}
+
+.volume {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.volumeInput {
+  width: 80px;
+  accent-color: var(--color-accent);
+}
+
+@media (max-width: 600px) {
+  .volumeInput {
+    display: none;
+  }
+}

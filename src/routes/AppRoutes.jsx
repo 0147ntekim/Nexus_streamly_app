@@ -12,6 +12,7 @@ import Browse from "../pages/Browse.jsx";
 import MovieDetails from "../pages/MovieDetails.jsx";
 import Player from "../pages/Player.jsx";
 import Subscription from "../pages/Subscription.jsx";
+import Checkout from "../pages/Checkout.jsx";
 import Profile from "../pages/Profile.jsx";
 import NotFound from "../pages/NotFound.jsx";
 
@@ -30,6 +31,10 @@ function AppRoutes() {
           <Route path="/movie/:id" element={<MovieDetails />} />
           <Route path="/watch/:id" element={<Player />} />
           <Route path="/subscription" element={<Subscription />} />
+          <Route
+            path="/subscription/checkout/:planId"
+            element={<Checkout />}
+          />
           <Route path="/profile" element={<Profile />} />
         </Route>
         <Route path="*" element={<NotFound />} />

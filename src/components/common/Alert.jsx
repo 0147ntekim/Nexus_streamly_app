@@ -1,6 +1,7 @@
 import styles from "./Alert.module.css";
 
 function Alert({ variant = "error", children }) {
+  // variant: "error" | "success" | "info"
   return (
     <div
       className={`${styles.alert} ${styles[variant]}`}

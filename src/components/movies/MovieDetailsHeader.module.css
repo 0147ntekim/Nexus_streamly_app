@@ -1,0 +1,118 @@
+.header {
+  position: relative;
+  padding: var(--space-5) 0;
+  background-color: var(--color-bg);
+  background-size: cover;
+  background-position: center top;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      to right,
+      color-mix(in srgb, var(--color-bg) 96%, transparent) 0%,
+      color-mix(in srgb, var(--color-bg) 80%, transparent) 50%,
+      color-mix(in srgb, var(--color-bg) 60%, transparent) 100%
+    ),
+    linear-gradient(to top, var(--color-bg) 0%, transparent 40%);
+}
+
+.layout {
+  position: relative;
+  display: grid;
+  gap: var(--space-4);
+}
+
+.posterWrap {
+  width: min(60%, 260px);
+  aspect-ratio: 2 / 3;
+  overflow: hidden;
+  border-radius: var(--radius);
+  background: var(--color-surface-hover);
+  box-shadow: var(--shadow-lg);
+}
+
+.poster {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.posterFallback {
+  height: 100%;
+  display: grid;
+  place-items: center;
+  padding: var(--space-3);
+  text-align: center;
+  color: var(--color-text-muted);
+  font-weight: 600;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.title {
+  font-size: clamp(1.8rem, 4.5vw, 3rem);
+  line-height: 1.1;
+}
+
+.tagline {
+  color: var(--color-text-muted);
+  font-style: italic;
+}
+
+.meta {
+  color: var(--color-text-muted);
+  font-weight: 600;
+}
+
+.genres {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.genre {
+  padding: 0.25rem 0.75rem;
+  background: var(--color-surface-hover);
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  font-size: 0.85rem;
+}
+
+.overview {
+  max-width: 65ch;
+}
+
+.facts {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: var(--space-3);
+  margin-top: var(--space-2);
+}
+
+@media (min-width: 768px) {
+  .layout {
+    grid-template-columns: 260px 1fr;
+    align-items: end;
+    gap: var(--space-5);
+  }
+
+  .posterWrap {
+    width: 100%;
+  }
+}

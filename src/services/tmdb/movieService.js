@@ -23,3 +23,21 @@ export async function searchMovies(query, signal) {
   );
   return data.results;
 }
+
+// Fetch details and credits together to avoid a separate credits request.
+export async function getMovieDetails(id, signal) {
+  return tmdbRequest(
+    `/movie/${encodeURIComponent(id)}`,
+    { append_to_response: "credits" },
+    signal
+  );
+}
+
+export async function getMovieRecommendations(id, signal) {
+  const data = await tmdbRequest(
+    `/movie/${encodeURIComponent(id)}/recommendations`,
+    {},
+    signal
+  );
+  return data.results;
+}

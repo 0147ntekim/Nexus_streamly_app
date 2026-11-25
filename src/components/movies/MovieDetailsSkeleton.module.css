@@ -1,0 +1,29 @@
+.header {
+  padding: var(--space-5) 0;
+}
+
+.layout {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.poster {
+  width: min(60%, 260px);
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+@media (min-width: 768px) {
+  .layout {
+    grid-template-columns: 260px 1fr;
+    gap: var(--space-5);
+  }
+
+  .poster {
+    width: 100%;
+  }
+}
